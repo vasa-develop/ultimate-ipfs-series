@@ -33,26 +33,19 @@ const ipfs = new ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'h
 
 //Create an Author
 async function addNewAuthor(name) {
-     //creating blog object
-     var newAuthor = await ipfs.dag.put({
+    //creating blog author object
+    var newAuthor = await ipfs.dag.put({
         name: name,
         profile: "Entrepreneur | Co-founder/Developer @TowardsBlockChain, an MIT CIC incubated startup | Speaker | https://vaibhavsaini.com"
     });
 
-    //Fetching multihash buffer from cid object.
-    const multihash = newAuthor.multihash;
-    
-    //passing multihash buffer to CID object to convert multihash to a readable format   
-    const cids = new CID(1, 'dag-cbor', multihash);
+    console.log("Added new Author "+name+": " + newAuthor);
 
-    console.log("Added new Author "+name+": "+cids.toBaseEncodedString());
-    
-    return cids.toBaseEncodedString();
+    return newAuthor;
 }
 
 //Creating a Blog
 async function createBlog(author, content, tags) {
-
     //creating blog object
     var post = await ipfs.dag.put({
         author: author,
@@ -61,37 +54,36 @@ async function createBlog(author, content, tags) {
         timeOfPublish: Date()
     });
 
-    //Fetching multihash buffer from cid object.
-    const multihash = post.multihash;
-    
-    //passing multihash buffer to CID object to convert multihash to a readable format   
-    const cids = new CID(1, 'dag-cbor', multihash);
+    console.log("Published a new Post by " + author + ": " + post);
 
-    console.log("Published a new Post by "+author+": "+cids.toBaseEncodedString());
-
-    return cids.toBaseEncodedString();
-    
+    return post;
 }
 
 //Read a blog
-async function readBlog(postCID){
-    ipfs.dag.get(postCID,(err, result)=>{
+async function readBlog(postCID) {
+    ipfs.dag.get(postCID + "", (err, post) => {
         if (err) {
           console.error('Error while reading post: ' + err)
         } else {
-            console.log("Post Details\n", result);
-            return result;
+            console.log("Post Details\n", post);
+            ipfs.dag.get(postCID + "/author", (err, author) => {
+                if (err) {
+                  console.error('Error while reading post author: ' + err)
+                } else {
+                  console.log("Post Author Details\n", author);
+                }
+              });
         }
     });
 }
 
 
-function startPublication(){
-    addNewAuthor("vasa").then((newAuthor)=>{
-        createBlog(newAuthor,"my first post", ["ipfs","ipld","vasa","towardsblockchain"]).then((postCID)=>{
-            readBlog(postCID);
-        })
-    });
+function startPublication() {
+    addNewAuthor("vasa").then(
+      (newAuthor) => {
+        createBlog(newAuthor,"my first post", ["ipfs","ipld","vasa","towardsblockchain"]).then(
+          (postCID) => readBlog(postCID))
+      });
 }
 
 startPublication();
