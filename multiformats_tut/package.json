@@ -1,0 +1,35 @@
+{
+  "name": "multiformats_tut",
+  "version": "1.0.0",
+  "description": "A tutorial for Multiformats. Learn more about Multiformats: Understanding IPFS in Depth(4/6): What is MultiFormats?",
+  "main": "multiaddr_tut.js",
+  "dependencies": {
+    "multiaddr": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasa-develop/ultimate-ipfs-series.git"
+  },
+  "keywords": [
+    "multiformats",
+    "ipfs",
+    "clusterlabs",
+    "multihash",
+    "multiaddr",
+    "multicodec",
+    "multistream",
+    "multistream-select",
+    "multikey",
+    "multigram"
+  ],
+  "author": "vasa-develop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasa-develop/ultimate-ipfs-series/issues"
+  },
+  "homepage": "https://github.com/vasa-develop/ultimate-ipfs-series#readme"
+}
