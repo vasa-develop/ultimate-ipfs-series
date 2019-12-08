@@ -2,8 +2,8 @@
 const ipfsClient = require('ipfs-http-client');
 const CID = require('cids');
 
-//Connecting ipfs instance to infura node. You can also use your local node.
-const ipfs = new ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
+//Connecting ipfs http client instance to local IPFS peer.
+const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http' });
 
 /*
 Creating an IPLD format node:
@@ -12,18 +12,18 @@ For more information see:
 https://github.com/ipfs/interface-js-ipfs-core/blob/master/SPEC/DAG.md#ipfsdagputdagnode-options-callback
 */
 
-ipfs.dag.put({name: "vasa"}, { format: 'dag-cbor', hashAlg: 'sha2-256' }, (err, cid)=>{
-  if(err){
-      console.log("ERR\n", err);
-  }
-  
-  //featching multihash buffer from cid object.
-  const multihash = cid.multihash;
-  
-  //passing multihash buffer to CID object to convert multihash to a readable format   
-  const cids = new CID(1, 'dag-cbor', multihash);
-  
-  //Printing out the cid in a readable format
-  console.log(cids.toBaseEncodedString());
-  //zdpuAujL3noEMamveLPQWJPY6CYZHhHoskYQaZBvRbAfVwR8S
+ipfs.dag.put({ name: "vasa" }, { format: 'dag-cbor', hashAlg: 'sha2-256' }, (err, cid) => {
+    if (err) {
+        console.log("ERR\n", err);
+    }
+
+    //featching multihash buffer from cid object.
+    const multihash = cid.multihash;
+
+    //passing multihash buffer to CID object to convert multihash to a readable format   
+    const cids = new CID(1, 'dag-cbor', multihash);
+
+    //Printing out the cid in a readable format
+    console.log(cids.toBaseEncodedString());
+    //bafyreiekjzonwkqd7vcfescxlhvuyn6atdvgevirauupbkncpyebllcuh4
 });
