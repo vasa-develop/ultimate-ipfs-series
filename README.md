@@ -12,9 +12,9 @@ To use the code snippets, you need to install NodeJS. The setup instructions use
 
 Under Windows, it is strongly recommended to run a [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for Windows and install a Ubuntu Virtual Machine inside it. Here is a YouTube video of 4 minutes, that can guide you through this double installation process: https://youtu.be/8mns5yqMfZk.
 ## Overview of changes (for the Pull Request)
-* all package.json have the latest versions of IPFS packages, as of June 2021
+* all `package.json` have the latest versions of IPFS packages, as of June 2021
 * the APIs of IPFS have changed, no more callback with `err` code, so we use liberally `try-catch` coding
-* the package.json refer to the latest npm packages, as of June 2021
+* the `package.json` refer to the latest `npm` packages, as of June 2021
 * each exercise has a modified readme
 # ultimate-ipfs-series
 An Ultimate tutorial series to learn about IPFS, IPLD, Multiformats, Libp2p and Filecoin
