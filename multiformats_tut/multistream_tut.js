@@ -1,3 +1,5 @@
+// Caution: remember to run "npm install multistream-select" before executing this demo
+// This code is not compatible with the latest version 2.0.0 of multistream-select
 const multistream = require('multistream-select')
 
 // encode some json

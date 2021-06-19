@@ -1,0 +1,306 @@
+<HTML>
+<HEAD>
+<TITLE>Feminist Perspectives on Web Fiction 2004: web pages</TITLE>
+
+<script language="javascript" type="text/javascript">
+<!--
+
+/*
+Image w/ description tooltip- By Dynamic Web Coding (www.dyn-web.com)
+Copyright 2002 by Sharon Paine
+Visit http://www.dynamicdrive.com for this script
+*/
+
+/* IMPORTANT: Put script after tooltip div or 
+	 put tooltip div just before </BODY>. */
+
+var dom = (document.getElementById) ? true : false;
+var ns5 = ((navigator.userAgent.indexOf("Gecko")>-1) && dom) ? true: false;
+var ie5 = ((navigator.userAgent.indexOf("MSIE")>-1) && dom) ? true : false;
+var ns4 = (document.layers && !dom) ? true : false;
+var ie4 = (document.all && !dom) ? true : false;
+var nodyn = (!ns5 && !ns4 && !ie4 && !ie5) ? true : false;
+
+// resize fix for ns4
+var origWidth, origHeight;
+if (ns4) {
+	origWidth = window.innerWidth; origHeight = window.innerHeight;
+	window.onresize = function() { if (window.innerWidth != origWidth || window.innerHeight != origHeight) history.go(0); }
+}
+
+// avoid error of passing event object in older browsers
+if (nodyn) { event = "nope" }
+
+///////////////////////  CUSTOMIZE HERE   ////////////////////
+// settings for tooltip 
+// Do you want tip to move when mouse moves over link?
+var tipFollowMouse= true;	
+// Be sure to set tipWidth wide enough for widest image
+var tipWidth= 160;
+var offX= 20;	// how far from mouse to show tip
+var offY= 12; 
+var tipFontFamily= "Verdana, arial, helvetica, sans-serif";
+var tipFontSize= "8pt";
+// set default text color and background color for tooltip here
+// individual tooltips can have their own (set in messages arrays)
+// but don't have to
+var tipFontColor= "#000000";
+var tipBgColor= "#DDECFF"; 
+var tipBorderColor= "#000080";
+var tipBorderWidth= 0;
+var tipBorderStyle= "ridge";
+var tipPadding= 4;
+
+// tooltip content goes here (image, description, optional bgColor, optional textcolor)
+var messages = new Array();
+// multi-dimensional arrays containing: 
+// image and text for tooltip
+// optional: bgColor and color to be sent to tooltip
+messages[0] = new Array('lucy.jpg','',"#FFFFFF");
+
+////////////////////  END OF CUSTOMIZATION AREA  ///////////////////
+
+// preload images that are to appear in tooltip
+// from arrays above
+if (document.images) {
+	var theImgs = new Array();
+	for (var i=0; i<messages.length; i++) {
+  	theImgs[i] = new Image();
+		theImgs[i].src = messages[i][0];
+  }
+}
+
+// to layout image and text, 2-row table, image centered in top cell
+// these go in var tip in doTooltip function
+// startStr goes before image, midStr goes between image and text
+var startStr = '<table width="' + tipWidth + '"><tr><td align="center" width="100%"><img src="';
+var midStr = '" border="0"></td></tr><tr><td valign="top">';
+var endStr = '</td></tr></table>';
+
+////////////////////////////////////////////////////////////
+//  initTip	- initialization for tooltip.
+//		Global variables for tooltip. 
+//		Set styles for all but ns4. 
+//		Set up mousemove capture if tipFollowMouse set true.
+////////////////////////////////////////////////////////////
+var tooltip, tipcss;
+function initTip() {
+	if (nodyn) return;
+	tooltip = (ns4)? document.tipDiv.document: (ie4)? document.all['tipDiv']: (ie5||ns5)? document.getElementById('tipDiv'): null;
+	tipcss = (ns4)? document.tipDiv: tooltip.style;
+	if (ie4||ie5||ns5) {	// ns4 would lose all this on rewrites
+		tipcss.width = tipWidth+"px";
+		tipcss.fontFamily = tipFontFamily;
+		tipcss.fontSize = tipFontSize;
+		tipcss.color = tipFontColor;
+		tipcss.backgroundColor = tipBgColor;
+		tipcss.borderColor = tipBorderColor;
+		tipcss.borderWidth = tipBorderWidth+"px";
+		tipcss.padding = tipPadding+"px";
+		tipcss.borderStyle = tipBorderStyle;
+	}
+	if (tooltip&&tipFollowMouse) {
+		if (ns4) document.captureEvents(Event.MOUSEMOVE);
+		document.onmousemove = trackMouse;
+	}
+}
+
+window.onload = initTip;
+
+/////////////////////////////////////////////////
+//  doTooltip function
+//			Assembles content for tooltip and writes 
+//			it to tipDiv
+/////////////////////////////////////////////////
+var t1,t2;	// for setTimeouts
+var tipOn = false;	// check if over tooltip link
+function doTooltip(evt,num) {
+	if (!tooltip) return;
+	if (t1) clearTimeout(t1);	if (t2) clearTimeout(t2);
+	tipOn = true;
+	// set colors if included in messages array
+	if (messages[num][2])	var curBgColor = messages[num][2];
+	else curBgColor = tipBgColor;
+	if (messages[num][3])	var curFontColor = messages[num][3];
+	else curFontColor = tipFontColor;
+	if (ns4) {
+		var tip = '<table bgcolor="' + tipBorderColor + '" width="' + tipWidth + '" cellspacing="0" cellpadding="' + tipBorderWidth + '" border="0"><tr><td><table bgcolor="' + curBgColor + '" width="100%" cellspacing="0" cellpadding="' + tipPadding + '" border="0"><tr><td>'+ startStr + messages[num][0] + midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr + '</td></tr></table></td></tr></table>';
+		tooltip.write(tip);
+		tooltip.close();
+	} else if (ie4||ie5||ns5) {
+		var tip = startStr + messages[num][0] + midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr;
+		tipcss.backgroundColor = curBgColor;
+	 	tooltip.innerHTML = tip;
+	}
+	if (!tipFollowMouse) positionTip(evt);
+	else t1=setTimeout("tipcss.visibility='visible'",100);
+}
+
+var mouseX, mouseY;
+function trackMouse(evt) {
+	mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft;
+	mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop;
+	if (tipOn) positionTip(evt);
+}
+
+/////////////////////////////////////////////////////////////
+//  positionTip function
+//		If tipFollowMouse set false, so trackMouse function
+//		not being used, get position of mouseover event.
+//		Calculations use mouseover event position, 
+//		offset amounts and tooltip width to position
+//		tooltip within window.
+/////////////////////////////////////////////////////////////
+function positionTip(evt) {
+	if (!tipFollowMouse) {
+		mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft;
+		mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop;
+	}
+	// tooltip width and height
+	var tpWd = (ns4)? tooltip.width: (ie4||ie5)? tooltip.clientWidth: tooltip.offsetWidth;
+	var tpHt = (ns4)? tooltip.height: (ie4||ie5)? tooltip.clientHeight: tooltip.offsetHeight;
+	// document area in view (subtract scrollbar width for ns)
+	var winWd = (ns4||ns5)? window.innerWidth-20+window.pageXOffset: document.body.clientWidth+document.body.scrollLeft;
+	var winHt = (ns4||ns5)? window.innerHeight-20+window.pageYOffset: document.body.clientHeight+document.body.scrollTop;
+	// check mouse position against tip and window dimensions
+	// and position the tooltip 
+	if ((mouseX+offX+tpWd)>winWd) 
+		tipcss.left = (ns4)? mouseX-(tpWd+offX): mouseX-(tpWd+offX)+"px";
+	else tipcss.left = (ns4)? mouseX+offX: mouseX+offX+"px";
+	if ((mouseY+offY+tpHt)>winHt) 
+		tipcss.top = (ns4)? winHt-(tpHt+offY): winHt-(tpHt+offY)+"px";
+	else tipcss.top = (ns4)? mouseY+offY: mouseY+offY+"px";
+	if (!tipFollowMouse) t1=setTimeout("tipcss.visibility='visible'",100);
+}
+
+function hideTip() {
+	if (!tooltip) return;
+	t2=setTimeout("tipcss.visibility='hidden'",100);
+	tipOn = false;
+}
+
+//-->
+</script>
+
+
+
+ <LINK REL=STYLESHEET TYPE="text/css" HREF="fpowf04.css">
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<TABLE WIDTH="100%" BORDER="0" CELLPADDING="10">
+<TR>
+<TD BACKGROUND="clouds.jpg" WIDTH="20%" VALIGN="top" >
+
+
+<P CLASS="large">FEMINIST PERSPECTIVES<BR>ON<BR> WEB FICTION<BR>2004</P>
+
+<A CLASS="b"HREF="col3.html">wws index</A><BR>
+<A CLASS="b" HREF="webfiction2004.html">outline</A><BR>
+<A CLASS="b" HREF="webfiction04.html">web fiction home</A>
+<A CLASS="b" HREF="guidelines04.html">guidelines</A><BR>
+<A CLASS="b" HREF="timtab04.html">timetable</A><BR>
+<A CLASS="b" HREF="bib04.html">bibliography</A><BR>
+<A CLASS="b"  HREF="http://groups.yahoo.com/group/Yorkgurls2004/" TARGET="_blank"> discussion list</A><BR>
+<A CLASS="b" HREF="telnet://lambda.moo.mud.org:8888">LambdaMOO</A><BR>
+<A CLASS="b" HREF="reading.html">week two</A><BR>
+<A CLASS="b" HREF="hayles.html">week three</A><BR>
+<A CLASS="b" HREF="weavingwomen.html">week four</A><BR>
+week five<BR>
+<A CLASS="b" HREF="cyborg.html">week six</A><BR>
+<A CLASS="b" HREF="patchworkbodies.html">week seven</A><BR>
+week eight<BR>
+<A CLASS="b" HREF="studentchoice.html">week nine</A><BR>
+<A CLASS="b" HREF="assignment04.html">week ten</A>
+
+<BR>  &nbsp; <BR>
+contact:<BR>
+Ann Kaloski<BR>
+eakn1 at york<BR>dot ac dot uk<BR>
+<BR>
+Centre for Women's Studies<BR>
+Grimston House
+
+<BR>tel: x3671/4
+
+</TD>
+
+
+<TD WIDTH="75%">
+
+ <H3>web page workshop <BR> &nbsp;
+</H3>
+<BR>
+
+<P CLASS="quote04">"In the proud tradition of giving children their own web domain as a christening present, my creators have given me my own website." <a href="http://www.cyberlife-research.com/" onmouseover="doTooltip(event,0)" onmouseout="hideTip()" TARGET="_BLANK">Lucy, a robot orang-utan</A> </P>
+ 
+<P> &nbsp; </P>
+<P CLASS="m">This week's work is to design a simple web site. Your work may remain on paper, or be transferred to a CDROM. It's probably better not to rely on online stability at this stage!</P>
+
+<UL> The aim of the exercise is two-fold:
+
+<LI>to think about the structure of web sites
+<LI>to approach a conceptual aspect of the course from a simple, 3D, web-design perspective. 
+
+</UL>
+
+<P CLASS="m">I am not seeking a complicated design but, rather, an analysis of the process.</P> 
+
+<P CLASS="pink">before the session</P>
+
+
+<UL>
+
+<LI>I would expect everyone to read at least two works of theory this week. If you havent already done so, check out the Landow, Aarseth, or Murray (full details in bibliography). 
+
+
+<LI>If necessary, use the <A HREF="swp1.html" TARGET="_BLANK">class online instructions</A> to learn or rehearse basic HTML skills. Have a word with me if you would like a tutorial.   
+
+ 
+<LI>With just simple formatting it is possible to produce a useful and attractive site, and you are strongly encouraged to play with this basic formatting - becoming competent with the fundamentals of HTML, stretching the way the code is used, learning to appreciate the nuances of basic web sites - before moving on to more complex elements of design. However, I don't intend to hold anyone back, and I will point you in the direction of many resources, both online and in the books.</P> 
+
+
+ 
+
+ 
+<LI><A NAME="messysketch">On paper, sketch out a small web site you would like to create. What will your web site be about? Take the challenge of designing a site about some aspect of the course work, remembering it need not be a formal site in order to address serious issues: 'YorkGurls Online' OR 'My life as a Cyborg' OR '<I>Powerbook</I>: Version 2". Draw arrows to help you decide where you will put a link. Your plan might look something like <A HREF="sketch04.html">this</A>.
+ 
+<LI>Continue with your theoretical reading (see bibliography and session worksheets). What aspects of web-theory are begining to make sense? 
+
+<LI><A NAME="wildgoosechase">Think about the hyperlink. What does a hyperlink <A HREF="pointless.html"><i>do</I></A>? You might find Kate Pullinger's research useful here: try the <A HREF="http://trace.ntu.ac.uk/writers/pullinger/forms/hyperlinkdisplay.cfm" TARGET="_BLANK">online discussion</A>.  
+
+<LI> Browse the web. Start to analyse the different sites you see. What is their purpose? Who is their target audience/ readership? What are some of the differences between 'art sites' and 'commercial sites' (the answers are not always obvious)? What do you like/ not like about certain web pages? Do you find yourself responding to sites that make you work at reading/ browsing/ viewing or do you get frustrated and move elsewhere - and in what ways is this different from engaging with print? 
+  
+</UL>
+
+
+<P CLASS="pink">during the session</P>
+
+<P CLASS="m">There will be presentations and discussion of all web sites.  Come to class with your papers, a few digital pages if you want, and some thoughts on the process, and how this challenges, confirms, or relates in some way to web-theories. </P>
+
+<P CLASS="m">Discussion should aim to relate the web-sites-in-progress to ideas and perspectives you have been reading about during the module.</P>
+
+<P CLASS="m">NB: This exercise can form the basis of an assignment, either in  its form, or though the ideas you generate, although it need not.</P>
+
+<P CLASS="pink">Some useful web design sites</P> 
+
+ <P><A HREF="http://www.bignosebird.com/" TARGET="_BLANK">BigNoseBird.Com</A></P>
+
+ <P><A HREF="http://hotwired.lycos.com/webmonkey/" TARGET="_BLANK">Web Monkey</A></P>
+ 
+ <P><A HREF="http://www.dynamicdrive.com/" TARGET="_BLANK"
+>Dynamic Drive</A></P>
+
+ <P>Also, check out the courses and online guides offered by York's <A HREF="https://www.york.ac.uk/services/cserv/" TARGET="_BLANK">computing services</A>. </P>  
+  
+
+</TD>
+ 
+<TD WIDTH="5%">
+&nbsp; 
+</TD>
+</TR>
+</TABLE>
+<div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100"></div>
+ 
+</BODY>
+</HTML>

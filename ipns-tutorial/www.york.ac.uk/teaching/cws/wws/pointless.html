@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+<TITLE>Feminist Perspectives on Web Fiction: what is the point of this link?</TITLE>
+
+ <LINK REL=STYLESHEET TYPE="text/css" HREF="fpowf.css">
+</HEAD>
+<BODY BGCOLOR="000000">
+
+<TABLE ALIGN="center">
+<TR>
+<TD>
+<script language="JavaScript1.2">
+
+/*
+Document firework script (By Kurt Gregg, kurt.grigg@virgin.net)
+Modified/ perm. granted to Dynamic Drive to feature script in archive
+For full source and 100's more DHTML scripts, visit http://dynamicdrive.com
+*/
+
+var ns=document.layers?1:0
+var ie4=document.all?1:0
+var ns6=document.getElementById&&!document.all?1:0
+
+amount=14;
+if (ns){
+for (i=0; i < amount; i++)
+document.write("<LAYER NAME='nsstars"+i+"' LEFT=0 TOP=0 BGCOLOR='#FFFFF0' CLIP='0,0,1,1'></LAYER>");
+}
+else if (ie4||ns6){
+document.write("<div id='ieCov' style='position:absolute;top:0px;left:0px'>");
+document.write("<div style='position:relative'>");
+for (i=0; i < amount; i++)
+document.write("<div id='iestars"+i+"' style='position:absolute;top:0px;left:0px;width:1;height:1;background:#ffffff;font-size:1;z-index:10'></div>");
+document.write("</div></div>");
+}
+Clrs=new Array('ff0000','00ff00','ffffff','ff00ff','ffa500','ffff00','00ff00','ffffff','ff00ff')
+sClrs=new Array('ffa500','00ff00','FFAAFF','fff000','fffffF')
+Xpos=300;
+Ypos=150;
+initialStarColor='00ff00';
+step=5;
+currStep=0;
+explosionSize=120;
+function Fireworks(){
+var WinHeight=(ns||ns6)?window.innerHeight-100:window.document.body.clientHeight-100;
+var WinWidth=(ns||ns6)?window.innerWidth-100:window.document.body.clientWidth-100;
+var Yscroll=(ns||ns6)?window.pageYOffset:document.body.scrollTop;
+for (i=0; i < amount; i++){
+if (ie4||ns6)
+var layer=ns6?document.getElementById("iestars"+i).style : eval("iestars"+i).style;
+else if (ns)
+var layer=document.layers["nsstars"+i]
+var randCol=Math.round(Math.random()*8);
+var randSz=Math.round(Math.random()*2);
+layer.top = Ypos + explosionSize*Math.sin((currStep+i*5)/3)*Math.sin(currStep/100)
+layer.left= Xpos + explosionSize*Math.cos((currStep+i*5)/3)*Math.sin(currStep/100)
+if (currStep < 110){
+ if (ns){layer.bgColor=initialStarColor;layer.clip.width=1;layer.clip.height=1}
+ else{layer.background=initialStarColor;layer.width=1;layer.height=1;layer.fontSize=1}
+ }
+else{
+ if (ns){layer.bgColor=Clrs[randCol];layer.clip.width=randSz;layer.clip.height=randSz}
+ else{layer.background=Clrs[randCol];layer.width=randSz;layer.height=randSz;layer.fontSize=randSz}
+ }
+}
+if (currStep > 220) 
+{
+ currStep=0;
+ Ypos = 50+Math.round(Math.random()*WinHeight)+Yscroll;
+ Xpos = 50+Math.round(Math.random()*WinWidth);
+ for (i=0; i < sClrs.length; i++)
+  {
+  var newIcol=Math.round(Math.random()*i);
+  }
+initialStarColor=sClrs[newIcol];
+explosionSize=Math.round(80*Math.random()+100);
+}
+currStep+=step;
+setTimeout("Fireworks()",20);
+}
+Fireworks();
+// -->
+</script>
+
+ <script language="JavaScript1.2">
+
+/*
+Cross browser Marquee II- © Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS, visit http://www.dynamicdrive.com
+Credit MUST stay intact
+*/
+
+//Specify the marquee's width (in pixels)
+var marqueewidth=400
+//Specify the marquee's height
+var marqueeheight=300
+//Specify the marquee's marquee speed (larger is faster 1-10)
+var marqueespeed=4
+//Pause marquee onMousever (0=no. 1=yes)?
+var pauseit=1
+
+//Specify the marquee's content
+//Keep all content on ONE line, and backslash any single quotations (ie: that\'s great):
+var marqueecontent='<P><font face="Verdana" size = "5" color="ff99ff">What did you expect when you clicked on the link?</font></P><P><font face="Verdana" size = "6" color="cc66cc">Is this page a waste of time?</font></P><P><font face="Verdana" size = "7"><A HREF="webpages04.html#wildgoosechase">take me back! </a></P></font>'
+
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+marqueespeed=(document.all)? marqueespeed : Math.max(1, marqueespeed-1) //slow speed down by 1 for NS
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var iedom=document.all||document.getElementById
+var actualheight=''
+var cross_marquee, ns_marquee
+
+function populate(){
+if (iedom){
+cross_marquee=document.getElementById? document.getElementById("iemarquee") : document.all.iemarquee
+cross_marquee.style.top=marqueeheight+8
+cross_marquee.innerHTML=marqueecontent
+actualheight=cross_marquee.offsetHeight
+}
+else if (document.layers){
+ns_marquee=document.ns_marquee.document.ns_marquee2
+ns_marquee.top=marqueeheight+8
+ns_marquee.document.write(marqueecontent)
+ns_marquee.document.close()
+actualheight=ns_marquee.document.height
+}
+lefttime=setInterval("scrollmarquee()",20)
+}
+window.onload=populate
+
+function scrollmarquee(){
+
+if (iedom){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8))
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed
+else
+cross_marquee.style.top=marqueeheight+8
+}
+else if (document.layers){
+if (ns_marquee.top>(actualheight*(-1)+8))
+ns_marquee.top-=copyspeed
+else
+ns_marquee.top=marqueeheight+8
+}
+}
+
+if (iedom||document.layers){
+with (document){
+if (iedom){
+write('<div style="position:relative;width:'+marqueewidth+';height:'+marqueeheight+';overflow:hidden" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">')
+write('<div id="iemarquee" style="position:absolute;left:0;top:0;width:100%;">')
+write('</div></div>')
+}
+else if (document.layers){
+write('<ilayer width='+marqueewidth+' height='+marqueeheight+' name="ns_marquee">')
+write('<layer name="ns_marquee2" width='+marqueewidth+' height='+marqueeheight+' left=0 top=0 onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed"></layer>')
+write('</ilayer>')
+}
+}
+}
+</script>
+
+</TD>
+</TR>
+</TABLE>
+ 
+ 
+</BODY>
+</HTML>

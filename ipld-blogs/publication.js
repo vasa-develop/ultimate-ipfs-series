@@ -1,83 +1,58 @@
-/*
-PUBLICATION SYSTEM
-Adding new Author
-An author will have
--> name
--> profile
-Creating A Blog
-A Blog will have a:
--> author
--> content
--> tags
--> timeOfPublish
-Read a Blog
-What more we could do with this?
-Try Listing all Blogs for an author. 
-Send me solution at hi@simpleaswater.com and get SimpleAsWater T-Shirts 
-*/
-
+/* 
+ * tutorial IPLD by Vaibhav Saini, updated by Vu Tien Khang (June 2021)
+ * create one IPLD node, the author details
+ * create one IPLD note, the blog details, referring to the author
+ * print the details of the blog detail, including the details of the author
+ */
 //Initiate ipfs and CID instance
 const ipfsClient = require('ipfs-http-client');
 const CID = require('cids');
 
-//Connecting ipfs http client instance to local IPFS peer.
-const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http' });
+// Connect ipfs http client instance to local IPFS peer.
+const ipfs = ipfsClient.create({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' });
 
-//Create an Author
+// Create an Author
 async function addNewAuthor(name) {
-  //creating blog author object
-  var newAuthor = await ipfs.dag.put({
-    name: name,
-    profile: "@SimpleAsWater | @TowardsBlockChain, an MIT CIC incubated startup | https://vaibhavsaini.com"
-  });
-
-  console.log("Added new Author " + name + ": " + newAuthor);
-
-  return newAuthor;
-}
-
-//Creating a Blog
-async function createBlog(author, content, tags) {
-
-  //creating blog object
-  var post = await ipfs.dag.put({
-    author: author,
-    content: content,
-    tags: tags,
-    timeOfPublish: Date()
-  });
-
-  //Fetching multihash buffer from cid object.
-  const multihash = post.multihash;
-
-  //passing multihash buffer to CID object to convert multihash to a readable format   
-  const cids = new CID(1, 'dag-cbor', multihash);
-
-  console.log("Published a new Post by " + author + ": " + cids.toBaseEncodedString());
-
-  return cids.toBaseEncodedString();
-
-}
-
-//Read a blog
-async function readBlog(postCID) {
-  ipfs.dag.get(postCID, (err, result) => {
-    if (err) {
-      console.error('Error while reading post: ' + err)
-    } else {
-      console.log("Post Details\n", result);
-      return result;
-    }
-  });
-}
-
-
-function startPublication() {
-  addNewAuthor("vasa").then((newAuthor) => {
-    createBlog(newAuthor, "my first post", ["ipfs", "ipld", "vasa", "towardsblockchain"]).then((postCID) => {
-      readBlog(postCID);
+    var newAuthor = await ipfs.dag.put({
+        name: name,
+        profile: "Entrepreneur | Co-founder/Developer @TowardsBlockChain, an MIT CIC incubated startup | Speaker | https://vaibhavsaini.com"
     })
-  });
+    console.log('   -> Added new Author '+ name + ': ' + newAuthor);
+    return newAuthor;
+}
+
+// Create a Blog Post
+async function createBlog(author, content, tags) {
+    var post = await ipfs.dag.put({
+        author: author,
+        content: content,
+        tags: tags,
+        timeOfPublish: Date()
+    })
+    console.log('   -> Created a new blog by author ' + author + ', blog: ' + post);
+    return post;
+}
+
+async function readBlog(postCID) {
+    try{
+        const post =  await ipfs.dag.get(postCID + '');
+        console.log('   -> Read blog: Post details =\n', post);
+    } catch(error){
+        console.error('   -> Error while reading post: ' + postCID + error);
+        return;
+    }
+    try {
+        const author = await ipfs.dag.get(postCID + '/author');
+        console.log('   -> Read blog: Author details =\n', author);
+    } catch (error) {
+        console.error('   -> Error while reading post author: ' + error);
+    }
+}
+
+async function startPublication() {
+    const newAuthor = await addNewAuthor('vasa');
+    const postCID = await createBlog(newAuthor, 'my first post', ['ipfs', 'ipld', 'towardsBlockchain']);
+    readBlog(postCID);
 }
 
 startPublication();

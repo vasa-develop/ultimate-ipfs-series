@@ -3,18 +3,15 @@
   "version": "1.0.0",
   "description": "A tutorial for Multiformats. Learn more about Multiformats: Understanding IPFS in Depth(4/6): What is MultiFormats?",
   "main": "multiaddr_tut.js",
-  "dependencies": {
-    "multiaddr": "^6.1.0",
-    "multibase": "^0.6.0",
-    "multihashes": "^0.4.14"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vasa-develop/ultimate-ipfs-series.git"
+  "dependencies": {
+    "multiaddr": "^9.0.1",
+    "multibase": "^4.0.4",
+    "multicodec": "^3.0.1",
+    "multihashes": "^4.0.2",
+    "multistream-select": "^2.0.0"
   },
   "keywords": [
     "multiformats",

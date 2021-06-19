@@ -1,0 +1,58 @@
+ 
+ 
+
+A:link {color:#000000; font-weight: 400; text-decoration: none}
+
+
+A:visited {color: #000000; font-weight: 400; text-decoration: none}
+
+A:hover {color:#fffff0; font-weight: 400; text-decoration: text-decoration: underline (color:#fffff0);}
+
+
+ 
+A:active {color:#fffff0; font-weight: 400; text-decoration: underline;}
+
+P.side {color:#000000; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 8pt; text-align: left;  margin-right: 600px; margin-left: 20px; margin-top: -25px; margin-bottom: 0px;}
+
+
+P.normal {color:#000000; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; text-align: center; line-height: 1.25; margin-right: 10pc; margin-left: 10pc; margin-top: 1pc; margin-bottom: 1pc; text-align: left;}
+
+P.a {color:#663399; font-family: Verdana, sans-serif;  font-weight: 600; font-size: 14pt; text-align: center;  margin-right: 10px; margin-left: 12px; margin-top: -50px; margin-bottom: 4px; }
+
+P.b {color:#cccccc; font-family: Verdana, sans-serif;  font-weight: 600; font-size: 14pt; text-align: center;  margin-right: 6px; margin-left: 10px; margin-top: -26px; margin-bottom: 30px; }
+
+P.c {color:#666699; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; text-align: left;  margin-right: 120px; margin-left: 120px; margin-top: 20px; margin-bottom: 20px; }
+
+P.d {color:#666699; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 8pt; text-align: justify;  margin-right: 190px; margin-left: 190px; margin-top: 20px; margin-bottom: 20px; }
+
+P.e {color:#000000; font-family: Verdana, sans-serif;  font-weight: 600; font-size: 14pt; text-align: left;  margin-right: 6px; margin-left: 140px; margin-top: 10px; margin-bottom: 30px; }
+
+P.names {color:#666669; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; text-align: center;  margin-right: 6px; margin-left: 10px; margin-top: -25px; margin-bottom: 60px; }
+
+OL, UL {color:#666699; text-align: left; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; margin-right: 170px; margin-left: 190px; margin-top: 10px; margin-bottom: 10px; }
+
+
+DL {color:#666699; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; text-align: left; margin-right: 120px; margin-left: 120px; margin-top: 0px; margin-bottom: 0px; }
+
+UL.p, LI.p, OL.p, DT.p, DL.p {color:#000000; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 10pt; text-align: left; margin-right: 20px; margin-left: 50px; margin-top: 10px; margin-bottom: 10px; }
+
+
+DD {color:#666699; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 8pt; text-align: left; margin-right: 20px; margin-left: 10px; margin-top: 0px; margin-bottom: 10px; }
+
+DD.p {color:#000000; font-family: Verdana, sans-serif;  font-weight: 400; font-size: 8pt; text-align: left; margin-right: 20px; margin-left: 100px; margin-top: -10px; margin-bottom: 10px; }
+
+
+ P.norm {font-family: Verdana, sans-serif;  font-weight: 600; font-size: 10pt; text-align: center; margin-right: 2pc; margin-left: 2pc; margin-top: 0pc; margin-bottom: 0pc; text-align: center;}
+
+P.norma {color:#fffff0; font-family: Verdana, sans-serif;   font-weight: 600; font-size: 10pt; line-height: 1.25; margin-right: 10pc; margin-left: 10pc; margin-top: 1pc; margin-bottom: 1pc; text-align: left;}
+
+ P.nor {color:#000000; font-family: Verdana, sans-serif;   font-weight: 400; font-size: 8pt; text-align: justify; margin-right: 10pc; margin-left: 10pc; margin-top: 1pc; margin-bottom: 1pc; }
+
+
+P {color:#fffff0; font-family: Verdana, sans-serif;   font-weight: 400; font-size: 8pt; text-align: center; line-height: 1.25; }
+
+P.p {color:#000000; font-family: Verdana, sans-serif;   font-weight: 400; font-size: 10pt; text-align: left; margin-right: 20px; margin-left: 20px; margin-top: 10px; margin-bottom: 10px; } 
+
+P.q {color:#000000; font-family: Verdana, sans-serif;   font-weight: 400; font-size: 8pt; text-align: left; margin-right: 100px; margin-left: 100px; margin-top: 30px; margin-bottom: 30px; } 
+
+P.f {color:#000000; font-family: Verdana, sans-serif;   font-weight: 400; font-size: 8pt; text-align: left; margin-right: 100px; margin-left: 140px; margin-top: -20px; margin-bottom: 40px; } 
