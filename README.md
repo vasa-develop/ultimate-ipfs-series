@@ -4,7 +4,7 @@
 This is a fork of the repository of [Vaibhav Saini](https://github.com/vasa-develop/ultimate-ipfs-series)
 The contribution is to update the code at the latest versions of the npm packages as of June 2021. The snippets have all been executed and are working. Only the first 4 articles have been updated. The last 2 articles require a Medium account to read that I don't have.
 ## To use the code snippets
-To use the code snippets, you need to install NodeJS. The setup instructions use the console utility (`Terminal.app`) from MacOS. The setup instructions are the same if you use Linux Ubuntu. 
+To use the code snippets, you need to install NodeJS. The setup instructions use the console utility (`Terminal.app`) from MacOS. Excepted for brew, the setup instructions are the same if you use Linux Ubuntu. 
 
 * Install [Brew](https://brew.sh/)
 * Install nodeJS via brew: `brew install node@14.17.0`  (this version of nodeJS is the last long term stable support)
