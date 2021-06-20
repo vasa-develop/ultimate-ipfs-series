@@ -16,5 +16,5 @@ Beware that **the code of the Medium post is obsolete**. Use the code here inste
 * Run `node ipld-blogs.js` to run the medium type publication tutorial.
 
 ## More reading
-Yoy may want to try [these exercises from ProtoSchool](https://proto.school/basics). 
+You may want to try [these exercises from ProtoSchool](https://proto.school/basics). 
 They are about the same topics as here, but explained differently.
