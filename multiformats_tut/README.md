@@ -3,6 +3,12 @@ This tutorial is a part of Medium Article Series ***"Understanding IPFS in Depth
 
 You can read the full article here: [*Understanding IPFS in Depth(4/6): What is MultiFormats?*](https://hackernoon.com/understanding-ipfs-in-depth-4-6-what-is-multiformats-cf25eef83966).
 
+In short, multiformats answers to the questions when we do peer-to-peer networking
+* what is the network address of the peer? what network transport protocol do we use?
+* what is the format the data should be in?
+* what is the size of the useful data? what is the overall size?
+* what application will use the data?
+
 Beware that **the code of the Medium post is obsolete**. Use the code here instead. It runs with
 * node@12.18.4
 * multiaddr@9.0.1
