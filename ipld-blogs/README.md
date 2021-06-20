@@ -17,4 +17,6 @@ Beware that **the code of the Medium post is obsolete**. Use the code here inste
 
 ## More reading
 You may want to try [these exercises from ProtoSchool](https://proto.school/basics). 
-They are about the same topics as here, but explained differently.
+They are about the same topics as the first 3 exercises, but explained differently.
+
+This [ProtoSchool link to a decentralised blog](https://proto.school/blog) is the same topic as the 4th exercise.

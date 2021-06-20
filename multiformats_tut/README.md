@@ -78,7 +78,12 @@ $ node mcodec.js
 Multistream is a self-describing format, like multicodec but for unlimited amount (streaming) of data. It is useful when we want to simultaneously distribute a same video session over several transport streams using several protocols, for example Facebook, YouTube, LinkedIn and Tweeter.
 
 We haven't touched the `multistream` tutorial. The code is not compatible with the version 2.0.0 of the package `multistream-select`.
+
+## More reading
+You may want to try [these exercises from ProtoSchool](https://proto.school/anatomy-of-a-cid). 
+They are about the same topics as here (multihash, multibase, multicodec), but explained differently.
 ## Bug, Fixes & Contributions
 We always welcome bug reports, bug fixes & contributions(PRs).
 - Add your bug reports [here](https://github.com/vasa-develop/ultimate-ipfs-series/issues/new)
 - Add your bug fixes and contributions(PRs) [here](https://github.com/vasa-develop/ultimate-ipfs-series/compare)
+

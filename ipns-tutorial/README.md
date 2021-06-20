@@ -44,3 +44,4 @@ $ node index.js
   --> IPNS record validated
 ```
 Note that the key `value` of the IPNS is the CID of the folder that we copy-pasted.
+
