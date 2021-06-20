@@ -29,5 +29,5 @@ To keep the things simple and managable, all the resources are grouped and prese
 - [**Understanding IPFS in Depth(6/6): What is Filecoin?**](https://medium.com/swlh/ultimate-guide-to-filecoin-breaking-down-filecoin-whitepaper-economics-9212541a5895) In this part, we discuss the incentivization layer of IPFS, filecoin. We discuss it’s whitepaper and it’s implementation specs including DSN(Distributed Storage Network), Proof-of-replication, Proof of Storage, Data storage and retrieval markets and Smart contract implementation on Filecoin protocol. We also discuss some flaws in filecoin protocol which are not mentioned in the whitepaper and suggest some improvements in filecoin protocol.
 
 ## More reading
-Once you get familiarized with IPFS after running the exercises of this repository, you may want to try [this complete free course from ProtoSchool](https://proto.school/tutorials?course=ipfs). 
+Once you get familiarized with IPFS after running the exercises of this repository, you may want to try [this complete free course from ProtoSchool](https://proto.school/tutorials?course=ipfs). It's from Protocol Labs, the team who created IPFS.
 
