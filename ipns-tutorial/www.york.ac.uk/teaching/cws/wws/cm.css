@@ -1,0 +1,48 @@
+
+
+A:link {color:#cccccc; font-weight: 600; text-decoration: none; font-size:11pt; georgia, verdana, sans-serif; }
+
+
+A:visited {color: #cccccc; font-weight: 600; text-decoration: none; font-size:11pt; georgia, verdana, sans-serif;}
+
+A:hover {color:#ffffff; font-weight: 600; text-decoration:none; font-size:11pt; georgia, verdana, sans-serif; }
+
+A:active {color:#ffffff; font-weight: 600; text-decoration: none; font-size:11pt; georgia, verdana, sans-serif ;}
+
+ P.timtab {color:#6699cc; font-weight: 600; font-size: 12px; font-family: verdarna,  sans-serif; text-align: center;  margin-right: 0px; margin-left: 0px; margin-top: 5px; margin-bottom: 5px; letter-spacing: 0px; }  
+
+
+ P.text {color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: left; margin-right: 80px; margin-left: 80px; margin-top: 10px; margin-bottom: 10px; letter-spacing: 1px; }  
+
+ P.textblue {color:#6699cc; font-weight: 600; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: left; margin-right: 80px; margin-left: 80px; margin-top: 10px; margin-bottom: 10px; letter-spacing: 1px; }  
+
+P.textleft {color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: left; margin-right: 250px; margin-left: 80px; margin-top: 10px; margin-bottom: 20px; letter-spacing: 1px; }  
+
+P.textright {color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: left; margin-right: 80px; margin-left: 250px; margin-top: 10px; margin-bottom: 20px; letter-spacing: 1px; }  
+
+
+P.quote {color:#000000; font-weight: 400; font-size: 11px; font-family: verdana, serif; text-align: left; margin-right: 80px; margin-left: 180px; margin-top: 30px; margin-bottom: 30px; letter-spacing: 1px; }  
+
+
+P.cyb {color:#000000; font-weight: 600; font-size: 12px; font-family: verdana, sans-serif; margin-right: 0px; margin-left: 10px; margin-top: 0px; margin-bottom: 0px; } 
+
+P.bib {color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, serif; margin-right: 200px; margin-left: 50px; margin-top: 10px; margin-bottom: 10px; letter-spacing: 1px; } 
+
+P.bibbette {color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, serif; margin-right: 200px; margin-left: 100px; margin-top: 5px; margin-bottom: 5px; letter-spacing: 1px; } 
+
+
+P.bibright{color:#000000; font-weight: 400; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: left; margin-right: 80px; margin-left: 50px; margin-top: 10px; margin-bottom: 20px; letter-spacing: 1px; }  
+
+
+
+P.cyborg {color:#6699cc; font-weight: 600; font-size: 12px; font-family: verdana, sans-serif; margin-right: 0px; margin-left: 10px; margin-top: 0px; margin-bottom: 0px; } 
+
+P.weeks {color:#000000; font-weight: 600; font-size: 12px; font-family: verdana, sans-serif; text-align: center;  } 
+
+P.contact {color:#ffffff; font-weight: 400; font-size: 10px; font-family: verdana, sans-serif; text-align: right } 
+
+P.head {color:#6699cc; font-weight: 600; font-size: 12px; font-family: verdana, sans-serif; text-align: center;  }  
+ 
+P.headbig {color:#000000; font-weight: 600; font-size: 14px; font-family: verdana, sans-serif; text-align: left;  }  
+
+P.secret {color:#ffffff; font-weight: 100; font-size: 1px; font-family: verdana, sans-serif; text-align: center;  }  

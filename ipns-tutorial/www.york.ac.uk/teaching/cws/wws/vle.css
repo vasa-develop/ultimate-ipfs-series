@@ -1,0 +1,47 @@
+ 
+BODY {font-family: Verdana, sans-serif; font-size: 10pt; font-weight: 400;  margin: 2pc;}
+
+TD {font-family: Verdana, sans-serif; font-size: 10pt; font-weight: 400;   color:  #993333;}
+
+P {font-family: Verdana, sans-serif; font-size: 10pt; font-weight: 400; font-weight: 400; color:  #993333; text-align: justify; margin-left: 1pc; margin-right: 1pc;}
+
+H1 {font-family: Verdana, sans-serif; font-size: 15px; font-weight: 600;  color:  #6699cc; text-align: left; margin-left: -3px; margin-right: -3px; margin-top: -3; background-color: #FFFFCC}
+
+P.h {font-family: Verdana, sans-serif; font-size: 14px; font-weight: 400; color:  #000000; text-align: right; margin-left: 520px; margin-right: 5px; margin-top: -90px; } 
+
+P.j {font-family: Verdana, sans-serif; font-size: 10px; font-weight: 400; color:  #000000; text-align: left; margin-left: 10px; margin-right: 1px; margin-top: 62px; border-color: #FFFFCC; }
+
+ 
+
+P.k {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 400; color:  #000000; text-align: left; margin-left: 50px; margin-right: 100px; margin-top: 50px; } 
+
+P.z {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 600; color:  #000000; text-align: justify; margin-left: 50px; margin-right: 50px; margin-top: 50px; } 
+
+
+P.m {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 400; color:  #000000; text-align: left; margin-left: 50px; margin-right: 50px; margin-top: 10px; margin=bottom: 20px; }
+
+P.small {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 600; color:  #000000; text-align: left; margin-left: -3px; margin-right: -3px; margin-top: -11px; background-color: #6699CC}
+
+OL, LI {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 400; color:  #000000; text-align: left; margin-left: 50px; margin-right: 20px; margin-top: 10px; margin=bottom: 20px; }
+
+
+UL {font-family: Verdana, sans-serif; font-size: 12px; font-weight: 400; color:  #000000; text-align: left; margin-left: 10px; margin-right: 20px; margin-top: 10px; margin=bottom: 20px; }
+
+
+A:link {color: #000000; font-weight: 400; text-decoration: underline; }
+ 
+
+A:visited {color: #000000; font-weight: 400; text-decoration: underline;}
+
+A:hover {color: #6699CC; font-weight: 400; text-decoration: underline; }
+
+A:active {color: #6699CC; font-weight: 400; text-decoration: underline; }
+
+A:link.yellow {color: #000000; font-weight: 600; text-decoration: underline; }
+ 
+
+A:visited.yellow {color: #000000; font-weight: 600; text-decoration: underline;}
+
+ A:hover.yellow {color: #6699CC; font-weight: 600; text-decoration: underline; background-color: #FFFFCC;}
+
+A:active.yellow {color: #6699CC; font-weight: 600; text-decoration: underline; background-color: #FFFFCC;}
