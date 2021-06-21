@@ -24,9 +24,9 @@ async function linkNodes() {
     const cids = new CID(1, 'dag-cbor', multihash);
 
     //print out the cid in a readable format, base32 and base 58btc
-    console.log('CID base32 =', cids.toBaseEncodedString());
+    console.log('CID base32 V1 =', cids.toBaseEncodedString());
     //bafyreigwftw565twi6kw3azu7hgz2lxoev3um6cjpgbn6lunqp6f3ewpve
-    console.log('CID base58btc =', cids.toBaseEncodedString('base58btc'));
+    console.log('CID base58btc V1 =', cids.toBaseEncodedString('base58btc'));
     //zdpuAujL3noEMamveLPQWJPY6CYZHhHoskYQaZBvRbAfVwR8S
 }
 

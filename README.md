@@ -1,8 +1,14 @@
 # Introduction
+[![](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/badge/project-machu----picchu-brightgreen)](https://github.com/Machu-Pichu/general.git)
+[![](https://img.shields.io/badge/usage-tutorial-lightgreen)](https://github.com/Machu-Pichu/general.git)
+
 *(Written in June 2021)*
 
 This is a fork of the repository of [Vaibhav Saini](https://github.com/vasa-develop/ultimate-ipfs-series)
 The contribution is to update the code at the latest versions of the npm packages as of June 2021. The snippets have all been executed and are working. Only the first 4 articles have been updated. The last 2 articles require a Medium account to read that I don't have.
+
+The licensing status of the original code of Vasa is unknown. But as long as all the code that I made here are new and inspired also by the original example of the [IPFS documentation site](https://github.com/ipfs/js-ipfs), the license of this code is MIT.
 ## To use the code snippets
 To use the code snippets, you need to install NodeJS. The setup instructions use the console utility (`Terminal.app`) from MacOS. Excepted for `brew`, the setup instructions are the same if you use Linux Ubuntu. 
 
